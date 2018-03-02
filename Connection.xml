@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"  standalone="yes" ?>
+<NewDataSet>
+  <Connection>
+    <Server>DESKTOP-23D72NA</Server>
+    <Database>HMS</Database>
+    <UserId>HMSAPP</UserId>
+    <Password>app@1234</Password>
+  </Connection>
+</NewDataSet> 
+

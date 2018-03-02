@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DT_SERVICES" msprop:Generator_TableClassName="DT_SERVICESDataTable" msprop:Generator_TableVarName="tableDT_SERVICES" msprop:Generator_RowChangedName="DT_SERVICESRowChanged" msprop:Generator_TablePropName="DT_SERVICES" msprop:Generator_RowDeletingName="DT_SERVICESRowDeleting" msprop:Generator_RowChangingName="DT_SERVICESRowChanging" msprop:Generator_RowEvHandlerName="DT_SERVICESRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_SERVICESRowDeleted" msprop:Generator_RowClassName="DT_SERVICESRow" msprop:Generator_UserTableName="DT_SERVICES" msprop:Generator_RowEvArgName="DT_SERVICESRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SERVICE_DATE" msprop:Generator_ColumnVarNameInTable="columnSERVICE_DATE" msprop:Generator_ColumnPropNameInRow="SERVICE_DATE" msprop:Generator_ColumnPropNameInTable="SERVICE_DATEColumn" msprop:Generator_UserColumnName="SERVICE_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="SERVICE_NAME" msprop:Generator_ColumnVarNameInTable="columnSERVICE_NAME" msprop:Generator_ColumnPropNameInRow="SERVICE_NAME" msprop:Generator_ColumnPropNameInTable="SERVICE_NAMEColumn" msprop:Generator_UserColumnName="SERVICE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="SERVICE_ID" msprop:Generator_ColumnVarNameInTable="columnSERVICE_ID" msprop:Generator_ColumnPropNameInRow="SERVICE_ID" msprop:Generator_ColumnPropNameInTable="SERVICE_IDColumn" msprop:Generator_UserColumnName="SERVICE_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="SERVICE_TIME" msprop:Generator_ColumnVarNameInTable="columnSERVICE_TIME" msprop:Generator_ColumnPropNameInRow="SERVICE_TIME" msprop:Generator_ColumnPropNameInTable="SERVICE_TIMEColumn" msprop:Generator_UserColumnName="SERVICE_TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="PRICE" msprop:Generator_ColumnVarNameInTable="columnPRICE" msprop:Generator_ColumnPropNameInRow="PRICE" msprop:Generator_ColumnPropNameInTable="PRICEColumn" msprop:Generator_UserColumnName="PRICE" type="xs:string" minOccurs="0" />
+              <xs:element name="REMARKS" msprop:Generator_ColumnVarNameInTable="columnREMARKS" msprop:Generator_ColumnPropNameInRow="REMARKS" msprop:Generator_ColumnPropNameInTable="REMARKSColumn" msprop:Generator_UserColumnName="REMARKS" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,44 @@
+c:\users\jigar\documents\visual studio 2012\Projects\HMS\HMS\bin\Debug\HMS.exe.config
+c:\users\jigar\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.csprojResolveAssemblyReference.cache
+c:\users\jigar\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.Properties.Resources.resources
+c:\users\jigar\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.csproj.GenerateResource.Cache
+c:\users\jigar\documents\visual studio 2012\Projects\HMS\HMS\bin\Debug\HMS.exe
+c:\users\jigar\documents\visual studio 2012\Projects\HMS\HMS\bin\Debug\HMS.pdb
+c:\users\jigar\documents\visual studio 2012\Projects\HMS\HMS\bin\Debug\Newtonsoft.Json.dll
+c:\users\jigar\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.Form1.resources
+c:\users\jigar\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.exe
+c:\users\jigar\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.pdb
+C:\Users\JIGAR\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.Frm_Hms_CheckIn.resources
+C:\Users\JIGAR\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.Masters.Frm_HMS_Room_Type_Master.resources
+C:\Users\JIGAR\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.Masters.Frm_HMS_Room_Master.resources
+C:\Users\JIGAR\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.Frm_AvailableRooms.resources
+C:\Users\JIGAR\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.Masters.Frm_HMS_CorporateClientEntry.resources
+C:\Users\JIGAR\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.MainForm.resources
+C:\Users\JIGAR\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.Frm_HMS_CheckOut.resources
+C:\Users\JIGAR\documents\visual studio 2012\Projects\HMS\HMS\obj\Debug\HMS.Frm_HMS_Services.resources
+E:\Jigar\HMS\HMS\bin\Debug\HMS.exe
+E:\Jigar\HMS\HMS\bin\Debug\HMS.exe.config
+E:\Jigar\HMS\HMS\bin\Debug\Newtonsoft.Json.dll
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Form1.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Frm_AvailableRooms.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Frm_Hms_CheckIn.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Frm_HMS_CheckOut.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Frm_HMS_Login.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Frm_Hms_ReportViewer.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Frm_Hms_ReprintInvoice.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Frm_HMS_RoomShifting.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Frm_HMS_Services.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.HMS_Checkout_Modifcation.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.MainForm.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Masters.Frm_HMS_CorporateClientEntry.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Masters.Frm_HMS_Occupacy.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Masters.Frm_HMS_Room_Master.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Masters.Frm_HMS_Room_Type_Master.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Masters.Frm_HMS_Service_Master.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Properties.Resources.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.Test.resources
+E:\Jigar\HMS\HMS\obj\Debug\HMS.csproj.GenerateResource.Cache
+E:\Jigar\HMS\HMS\obj\Debug\HMS.exe
+E:\Jigar\HMS\HMS\obj\Debug\HMS.pdb
+E:\Jigar\HMS\HMS\bin\Debug\HMS.pdb
+E:\Jigar\HMS\HMS\obj\Debug\HMS.csprojResolveAssemblyReference.cache
