@@ -595,8 +595,8 @@ namespace HMS
                        firstName,
                        middleName,
                        lastName,
-                       Convert.ToDecimal(mobileNo),
-                       Convert.ToDecimal(landLineNo),
+                       Convert.ToDecimal(string.IsNullOrEmpty(mobileNo) ? "0" : mobileNo),
+                       Convert.ToDecimal(string.IsNullOrEmpty(landLineNo) ? "0" : landLineNo),
                        emailId,
                        address1,
                        address2,
@@ -605,7 +605,7 @@ namespace HMS
                        country,
                        state,
                        city,
-                       Convert.ToDecimal(postalCode),
+                       Convert.ToDecimal(string.IsNullOrEmpty(postalCode) ? "0" : postalCode),
                        referance,
                        visitPurpose,
                        typeOfIdProof,
@@ -625,7 +625,8 @@ namespace HMS
                        multiRooms,
                        expectedCheckOut,
                        gstnNo,
-                       Convert.ToInt32(string.IsNullOrEmpty(corporateClientId) ? "0" : corporateClientId)                       
+                       Convert.ToInt32(string.IsNullOrEmpty(corporateClientId) ? "0" : corporateClientId),
+                        Convert.ToInt32(string.IsNullOrEmpty(roomRent) ? "0" : roomRent)                       
                        );
 
                    if (!_message.Equals("No Error"))

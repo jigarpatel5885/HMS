@@ -17,7 +17,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_HMS_Room_Type_Master());
+            Application.Run(new Frm_HMS_CorporateClientEntry());
         }   
     }
 }

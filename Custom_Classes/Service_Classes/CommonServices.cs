@@ -789,8 +789,9 @@ namespace HMS.Custom_Classes.Service_Classes
                                         string checkinTime,
                                        string multipleRooms,
                                        string expectedCheckOutDate,
-                                        string gstin,
-                                        int corporateId
+                                       string gstin,
+                                       int corporateId,
+                                       decimal roomRent     
               )
 
           {
@@ -1087,7 +1088,14 @@ namespace HMS.Custom_Classes.Service_Classes
 
               });
 
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Room_Rent",
+                  SqlDbType = SqlDbType.Decimal,
+                  Direction = ParameterDirection.Input,
+                  Value = roomRent
 
+              });
               var dataTable = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_SETCHECKINDETAILS", sqlParams, out outPutParameter);
               if (outPutParameter.Keys.Count > 0 && outPutParameter.ContainsKey("@Error"))
               {

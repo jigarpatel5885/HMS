@@ -564,7 +564,6 @@
             this.txtRoomCharges.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomCharges.Location = new System.Drawing.Point(893, 514);
             this.txtRoomCharges.Name = "txtRoomCharges";
-            this.txtRoomCharges.ReadOnly = true;
             this.txtRoomCharges.Size = new System.Drawing.Size(184, 22);
             this.txtRoomCharges.TabIndex = 40;
             this.txtRoomCharges.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPricePerNight_KeyPress);
