@@ -34,8 +34,8 @@ namespace HMS
 
         private void Frm_Hms_CheckIn_Load(object sender, EventArgs e)
         {
-            clearData();
-
+            //clearData();
+            rbtRegClientY.Checked = true;
             dtpTime.Text = DateTime.Now.ToString("hh:mm:ss");
             fillCountries();
             fillIdProofs();
@@ -289,7 +289,7 @@ namespace HMS
             
         }
 
-        private string getGstnByClientId(string clientId)
+        private void setCorporateClientDetails(string clientId)
         {
             var dt = new DataTable();
             var ds = new DataSet();
@@ -315,13 +315,22 @@ namespace HMS
             }
             else
             {
-                ds = _commonServices.getGstnByClienId(cmbGuest.SelectedValue.ToString());
+                ds = _commonServices.getCorporateDetailByClienId(cmbGuest.SelectedValue.ToString());
                 try
                 {
                     if (ds.Tables.Count > 0)
                     {
                         dt = ds.Tables[0];
-                        gstnNo = dt.Rows[0][0].ToString();
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            txtGstn.Text = row[_clsCorporateClient.GstnNo].ToString();
+                            txtAddress1.Text = row[_clsCorporateClient.address1].ToString();
+                            txtAddress2.Text = row[_clsCorporateClient.address2].ToString();
+                            txtAddress3.Text = row[_clsCorporateClient.address3].ToString();
+                            txtEmailId.Text = row[_clsCorporateClient.email].ToString();
+                            txtMobileNo.Text = row[_clsCorporateClient.mobileNo].ToString();
+                        }
+                       
                     }
                 }
                 catch (Exception ex)
@@ -331,7 +340,7 @@ namespace HMS
                 }
                
             }
-            return gstnNo;
+            
         }
 
         private void clearData()
@@ -789,7 +798,7 @@ namespace HMS
         {
             if (!string.IsNullOrWhiteSpace(cmbGuest.Text))
             {
-                txtGstn.Text = getGstnByClientId(cmbGuest.SelectedValue.ToString());
+               setCorporateClientDetails(cmbGuest.SelectedValue.ToString());
             }
         }
 

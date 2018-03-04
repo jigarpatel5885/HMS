@@ -715,7 +715,7 @@ namespace HMS.Custom_Classes.Service_Classes
           #endregion
 
         #region getCorporateGstn
-          public DataSet getGstnByClienId(string ClienId)
+          public DataSet getCorporateDetailByClienId(string ClienId)
           {
               var dataset = new DataSet();
               var sqlParams = new List<SqlParameter>();
@@ -738,7 +738,7 @@ namespace HMS.Custom_Classes.Service_Classes
 
               });
 
-              dataset = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_GETCORPORATEGSTNO", sqlParams, out outPutParameter);
+              dataset = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_GETCORPORATECLIENTDETAIL", sqlParams, out outPutParameter);
 
               if (outPutParameter.Keys.Count > 0 && outPutParameter.ContainsKey("@Error"))
               {

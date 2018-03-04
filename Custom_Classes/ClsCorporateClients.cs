@@ -11,18 +11,18 @@ namespace HMS.Custom_Classes
         public ClsCorporateClients ()
 	    {
             name = "name";
-            mobileNo = "mobile";
-            email = "email";
+            mobileNo = "mobile_no";
+            email = "email_id";
             landLineNo = "landLine";
-            address1 = "add1";
-            address2 = "add2";
-            address3 = "add3";
+            address1 = "address1";
+            address2 = "address2";
+            address3 = "address3";
             area = "area";
             city = "city";
             state = "state";
             country = "country";
             postalCode = "postalCode";
-            GstnNo = "gstin";
+            GstnNo = "gstn";
             contactPerson = "contactPerson";
 	    }
 
