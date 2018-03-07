@@ -1466,6 +1466,7 @@ namespace HMS.Custom_Classes.Service_Classes
                                       int cgst,  
                                       decimal totalAmount,
                                       string trnMode,
+                                      decimal totServiceAmt,  
                                       Boolean param1
              
                               )
@@ -1537,6 +1538,14 @@ namespace HMS.Custom_Classes.Service_Classes
                   Direction = ParameterDirection.Input,
                   Value = totalAmount
               });
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Total_Service_Amount",
+                  SqlDbType = SqlDbType.Decimal,
+                  Direction = ParameterDirection.Input,
+                  Value = totServiceAmt
+              });
+
               sqlParams.Add(new SqlParameter()
               {
                   ParameterName = "@Trn_Mode",

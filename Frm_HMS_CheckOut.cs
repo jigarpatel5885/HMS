@@ -72,6 +72,21 @@ namespace HMS
             
         }
 
+        private void SetTotalServiceAmount()
+        {
+            double total = 0;
+
+            if (datagridview1.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow dr in datagridview1.Rows)
+                {
+                    total += Convert.ToDouble(dr.Cells["Price"].Value.ToString());
+
+                }
+            }
+            txtTotalServiceAmt.Text = total.ToString();
+        }
+
         private void fillGuestData()
         {
             try
@@ -106,7 +121,7 @@ namespace HMS
 
         private void setTotalAmount()
         {
-            double total = 0;
+            double total = 0,discountTot=0,cgstTot=0,sgstTot=0;
             var discount = txtDiscountPer.Text;
             var CGST = txtCgstPer.Text;
             var SGST = txtSgstPer.Text;
@@ -122,26 +137,37 @@ namespace HMS
             {
                 SGST = "0";
             }
+            
             foreach (DataGridViewRow dr in datagridview1.Rows)
             {
                 total += Convert.ToDouble(dr.Cells["Price"].Value.ToString());
 
             }
+            txtTotal.Text = total.ToString();
             if (discount.ToString() != "0")
             {
-                total = GetGrandTotalAmount(total, discount.ToString(), true);
+                discountTot = (Convert.ToDouble(txtTotalServiceAmt.Text)) * (Convert.ToDouble(discount.ToString()));
+
+                discountTot = discountTot / 100;
+                 txtTotal.Text = System.Math.Round(((Convert.ToDouble(txtTotalServiceAmt.Text)-  discountTot) + cgstTot + sgstTot)).ToString();
+                 
             }
 
             if (CGST.ToString() != "0")
             {
-                total = GetGrandTotalAmount(total, CGST.ToString(), false);
+
+                cgstTot = (Convert.ToDouble(txtTotalServiceAmt.Text)) * (Convert.ToDouble(CGST.ToString().ToString()));
+                cgstTot = cgstTot / 100;                
+                txtTotal.Text = System.Math.Round(((Convert.ToDouble(txtTotalServiceAmt.Text) - discountTot) + cgstTot + sgstTot)).ToString();
             }
             if (SGST.ToString() != "0")
             {
-                total = GetGrandTotalAmount(total, SGST.ToString(),false);
+                sgstTot = (Convert.ToDouble(txtTotalServiceAmt.Text)) * (Convert.ToDouble(SGST.ToString()));
+                sgstTot = sgstTot / 100;             
+                txtTotal.Text = System.Math.Round(((Convert.ToDouble(txtTotalServiceAmt.Text) - discountTot) + cgstTot + sgstTot)).ToString();
             }
-           
-            txtTotal.Text = total.ToString();
+
+            
             
            
         }
@@ -254,13 +280,14 @@ namespace HMS
             fillRooms();
             cmbPaymentMode.SelectedIndex = 0;
              txtCheckOutTime.Text = DateTime.Now.ToString("hh:mm:ss");
-         
+             SetTotalServiceAmount();
         }
 
         private void cmbRoomNo_SelectedIndexChanged(object sender, EventArgs e)
         {
             fillServiceByRoomId(cmbRoomNo.Text);
             fillGuestData();
+           
             setTotalAmount();
         }
 
@@ -295,6 +322,7 @@ namespace HMS
             string reservationId = string.Empty;
             int discount = 0,cgst=0,sgst=0,roomNo=0;
             decimal totalAmount = 0;
+            decimal totalServiceAmt = 0;
              userId = _clsGlobalConstants.glvUserId;
              reservationId = txtRegNo.Text;
             roomNo = Convert.ToInt32(cmbRoomNo.Text);
@@ -308,7 +336,7 @@ namespace HMS
                 discount = Convert.ToInt32(string.IsNullOrEmpty(txtDiscountPer.Text) ? "0" : txtDiscountPer.Text);
                 cgst = Convert.ToInt32(string.IsNullOrEmpty(txtCgstPer.Text) ? "0" : txtCgstPer.Text);
                 sgst = Convert.ToInt32(string.IsNullOrEmpty(txtSgstPer.Text) ? "0" : txtSgstPer.Text);
-
+                totalServiceAmt = Convert.ToDecimal(string.IsNullOrEmpty(txtTotalServiceAmt.Text) ? "0" : txtTotalServiceAmt.Text); 
                 totalAmount = Convert.ToDecimal( string.IsNullOrEmpty (txtTotal.Text)? "0": txtTotal.Text);
                  if (chkReckin.Checked)
                  {
@@ -321,8 +349,10 @@ namespace HMS
                     discount,
                     sgst,
                     cgst,
-                    totalAmount,
-                    trnMode, true);
+                    totalAmount,                   
+                    trnMode,
+                    totalServiceAmt,
+                    true);
                  }
                  else
                  {
@@ -336,7 +366,9 @@ namespace HMS
                       sgst,
                       cgst,
                       totalAmount,
-                      trnMode,false);
+                      trnMode,
+                      totalServiceAmt,
+                      false);
                  }
               
 

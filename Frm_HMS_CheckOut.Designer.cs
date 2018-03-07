@@ -43,6 +43,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtTotalServiceAmt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbPaymentMode = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -203,6 +205,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtTotalServiceAmt);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.cmbPaymentMode);
             this.groupBox2.Controls.Add(this.label6);
@@ -225,11 +229,31 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(922, 107);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 16);
+            this.label8.TabIndex = 126;
+            this.label8.Text = "Total";
+            // 
+            // txtTotalServiceAmt
+            // 
+            this.txtTotalServiceAmt.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalServiceAmt.Location = new System.Drawing.Point(1041, 104);
+            this.txtTotalServiceAmt.Name = "txtTotalServiceAmt";
+            this.txtTotalServiceAmt.ReadOnly = true;
+            this.txtTotalServiceAmt.Size = new System.Drawing.Size(133, 22);
+            this.txtTotalServiceAmt.TabIndex = 125;
+            this.txtTotalServiceAmt.TabStop = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(945, 160);
+            this.label7.Location = new System.Drawing.Point(925, 213);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 16);
             this.label7.TabIndex = 124;
@@ -243,7 +267,7 @@
             this.cmbPaymentMode.Items.AddRange(new object[] {
             "Cash",
             "Card"});
-            this.cmbPaymentMode.Location = new System.Drawing.Point(1061, 157);
+            this.cmbPaymentMode.Location = new System.Drawing.Point(1041, 210);
             this.cmbPaymentMode.Name = "cmbPaymentMode";
             this.cmbPaymentMode.Size = new System.Drawing.Size(133, 24);
             this.cmbPaymentMode.TabIndex = 123;
@@ -252,7 +276,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(945, 190);
+            this.label6.Location = new System.Drawing.Point(925, 243);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 16);
             this.label6.TabIndex = 121;
@@ -261,7 +285,7 @@
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(1061, 187);
+            this.txtTotal.Location = new System.Drawing.Point(1041, 240);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(133, 22);
@@ -305,7 +329,7 @@
             // txtSgstPer
             // 
             this.txtSgstPer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSgstPer.Location = new System.Drawing.Point(1061, 129);
+            this.txtSgstPer.Location = new System.Drawing.Point(1041, 182);
             this.txtSgstPer.Name = "txtSgstPer";
             this.txtSgstPer.Size = new System.Drawing.Size(133, 22);
             this.txtSgstPer.TabIndex = 104;
@@ -316,16 +340,16 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(942, 135);
+            this.label15.Location = new System.Drawing.Point(922, 188);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(59, 16);
+            this.label15.Size = new System.Drawing.Size(66, 16);
             this.label15.TabIndex = 103;
-            this.label15.Text = "SGST %";
+            this.label15.Text = "UTGST %";
             // 
             // txtCgstPer
             // 
             this.txtCgstPer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCgstPer.Location = new System.Drawing.Point(1061, 104);
+            this.txtCgstPer.Location = new System.Drawing.Point(1041, 157);
             this.txtCgstPer.Name = "txtCgstPer";
             this.txtCgstPer.Size = new System.Drawing.Size(133, 22);
             this.txtCgstPer.TabIndex = 102;
@@ -336,7 +360,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(942, 107);
+            this.label14.Location = new System.Drawing.Point(922, 160);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(83, 16);
             this.label14.TabIndex = 101;
@@ -345,7 +369,7 @@
             // txtDiscountPer
             // 
             this.txtDiscountPer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscountPer.Location = new System.Drawing.Point(1061, 79);
+            this.txtDiscountPer.Location = new System.Drawing.Point(1041, 132);
             this.txtDiscountPer.Name = "txtDiscountPer";
             this.txtDiscountPer.Size = new System.Drawing.Size(133, 22);
             this.txtDiscountPer.TabIndex = 98;
@@ -356,7 +380,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(942, 82);
+            this.label12.Location = new System.Drawing.Point(922, 135);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 16);
             this.label12.TabIndex = 97;
@@ -497,5 +521,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbPaymentMode;
         private System.Windows.Forms.CheckBox chkReckin;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtTotalServiceAmt;
     }
 }

@@ -390,9 +390,13 @@ namespace HMS.DataSets {
             
             private global::System.Data.DataColumn columnSGST;
             
-            private global::System.Data.DataColumn columnPAYMENT_MODE;
+            private global::System.Data.DataColumn columnPAYMENT_BY;
             
             private global::System.Data.DataColumn columnINVOICE_NO;
+            
+            private global::System.Data.DataColumn columnTOTAL_SERVICE_AMT;
+            
+            private global::System.Data.DataColumn columnDISCOUNT;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -453,9 +457,9 @@ namespace HMS.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PAYMENT_MODEColumn {
+            public global::System.Data.DataColumn PAYMENT_BYColumn {
                 get {
-                    return this.columnPAYMENT_MODE;
+                    return this.columnPAYMENT_BY;
                 }
             }
             
@@ -464,6 +468,22 @@ namespace HMS.DataSets {
             public global::System.Data.DataColumn INVOICE_NOColumn {
                 get {
                     return this.columnINVOICE_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TOTAL_SERVICE_AMTColumn {
+                get {
+                    return this.columnTOTAL_SERVICE_AMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DISCOUNTColumn {
+                get {
+                    return this.columnDISCOUNT;
                 }
             }
             
@@ -504,14 +524,16 @@ namespace HMS.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SALESRow AddSALESRow(decimal TOTAL_AMOUNT, int CGST, int SGST, string PAYMENT_MODE, string INVOICE_NO) {
+            public SALESRow AddSALESRow(decimal TOTAL_AMOUNT, int CGST, int SGST, string PAYMENT_BY, string INVOICE_NO, string TOTAL_SERVICE_AMT, int DISCOUNT) {
                 SALESRow rowSALESRow = ((SALESRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TOTAL_AMOUNT,
                         CGST,
                         SGST,
-                        PAYMENT_MODE,
-                        INVOICE_NO};
+                        PAYMENT_BY,
+                        INVOICE_NO,
+                        TOTAL_SERVICE_AMT,
+                        DISCOUNT};
                 rowSALESRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSALESRow);
                 return rowSALESRow;
@@ -537,8 +559,10 @@ namespace HMS.DataSets {
                 this.columnTOTAL_AMOUNT = base.Columns["TOTAL_AMOUNT"];
                 this.columnCGST = base.Columns["CGST"];
                 this.columnSGST = base.Columns["SGST"];
-                this.columnPAYMENT_MODE = base.Columns["PAYMENT_MODE"];
+                this.columnPAYMENT_BY = base.Columns["PAYMENT_BY"];
                 this.columnINVOICE_NO = base.Columns["INVOICE_NO"];
+                this.columnTOTAL_SERVICE_AMT = base.Columns["TOTAL_SERVICE_AMT"];
+                this.columnDISCOUNT = base.Columns["DISCOUNT"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -550,10 +574,14 @@ namespace HMS.DataSets {
                 base.Columns.Add(this.columnCGST);
                 this.columnSGST = new global::System.Data.DataColumn("SGST", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSGST);
-                this.columnPAYMENT_MODE = new global::System.Data.DataColumn("PAYMENT_MODE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPAYMENT_MODE);
+                this.columnPAYMENT_BY = new global::System.Data.DataColumn("PAYMENT_BY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAYMENT_BY);
                 this.columnINVOICE_NO = new global::System.Data.DataColumn("INVOICE_NO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnINVOICE_NO);
+                this.columnTOTAL_SERVICE_AMT = new global::System.Data.DataColumn("TOTAL_SERVICE_AMT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTOTAL_SERVICE_AMT);
+                this.columnDISCOUNT = new global::System.Data.DataColumn("DISCOUNT", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDISCOUNT);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1869,17 +1897,17 @@ namespace HMS.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PAYMENT_MODE {
+            public string PAYMENT_BY {
                 get {
                     try {
-                        return ((string)(this[this.tableSALES.PAYMENT_MODEColumn]));
+                        return ((string)(this[this.tableSALES.PAYMENT_BYColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PAYMENT_MODE\' in table \'SALES\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PAYMENT_BY\' in table \'SALES\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSALES.PAYMENT_MODEColumn] = value;
+                    this[this.tableSALES.PAYMENT_BYColumn] = value;
                 }
             }
             
@@ -1896,6 +1924,38 @@ namespace HMS.DataSets {
                 }
                 set {
                     this[this.tableSALES.INVOICE_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TOTAL_SERVICE_AMT {
+                get {
+                    try {
+                        return ((string)(this[this.tableSALES.TOTAL_SERVICE_AMTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TOTAL_SERVICE_AMT\' in table \'SALES\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSALES.TOTAL_SERVICE_AMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int DISCOUNT {
+                get {
+                    try {
+                        return ((int)(this[this.tableSALES.DISCOUNTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DISCOUNT\' in table \'SALES\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSALES.DISCOUNTColumn] = value;
                 }
             }
             
@@ -1937,14 +1997,14 @@ namespace HMS.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPAYMENT_MODENull() {
-                return this.IsNull(this.tableSALES.PAYMENT_MODEColumn);
+            public bool IsPAYMENT_BYNull() {
+                return this.IsNull(this.tableSALES.PAYMENT_BYColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPAYMENT_MODENull() {
-                this[this.tableSALES.PAYMENT_MODEColumn] = global::System.Convert.DBNull;
+            public void SetPAYMENT_BYNull() {
+                this[this.tableSALES.PAYMENT_BYColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1957,6 +2017,30 @@ namespace HMS.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetINVOICE_NONull() {
                 this[this.tableSALES.INVOICE_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTOTAL_SERVICE_AMTNull() {
+                return this.IsNull(this.tableSALES.TOTAL_SERVICE_AMTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTOTAL_SERVICE_AMTNull() {
+                this[this.tableSALES.TOTAL_SERVICE_AMTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDISCOUNTNull() {
+                return this.IsNull(this.tableSALES.DISCOUNTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDISCOUNTNull() {
+                this[this.tableSALES.DISCOUNTColumn] = global::System.Convert.DBNull;
             }
         }
         
