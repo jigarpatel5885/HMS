@@ -39,7 +39,7 @@ namespace HMS
             dtpTime.Text = DateTime.Now.ToString("hh:mm:ss");
             fillCountries();
             fillIdProofs();
-          
+            fillRooms();
            
             //fillPurposeOfVisit();
            
@@ -467,6 +467,10 @@ namespace HMS
             cmbGuest.Visible = false;
             cmbGuest.DataSource = null;
             txtGstn.Text = "0";
+            txtAddress1.Text = "";
+            txtAddress2.Text = "";
+            txtAddress3.Text = "";
+
         }
 
         
