@@ -1224,6 +1224,54 @@ namespace HMS.Custom_Classes.Service_Classes
               }
               return dataset;
           }
+
+
+          public DataSet getServiceByRoomIdRid(string roomId,string reservation_Id)
+          {
+              var dataset = new DataSet();
+              var sqlParams = new List<SqlParameter>();
+              var outPutParameter = new Dictionary<string, string>();
+
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Room_No",
+                  SqlDbType = SqlDbType.VarChar,
+                  Direction = ParameterDirection.Input,
+                  Value = roomId
+
+              });
+
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Reservation_Id",
+                  SqlDbType = SqlDbType.VarChar,
+                  Direction = ParameterDirection.Input,
+                  Value = reservation_Id
+
+              });
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Error",
+                  SqlDbType = SqlDbType.VarChar,
+                  Direction = ParameterDirection.Output,
+                  Size = 5000
+
+              });
+
+              dataset = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_GETCUSTOMERSERVICELIST_MOD", sqlParams, out outPutParameter);
+
+              if (outPutParameter.Keys.Count > 0 && outPutParameter.ContainsKey("@Error"))
+              {
+                  if (outPutParameter["@Error"] == "NoError")
+                  {
+                  }
+                  else
+                  {
+                      _message = outPutParameter["@Error"];
+                  }
+              }
+              return dataset;
+          }
           #endregion
 
         #region Customer Service
@@ -1811,6 +1859,47 @@ namespace HMS.Custom_Classes.Service_Classes
 
               return _message;
           }
+        #endregion
+
+        #region CheckoutModification
+         public DataSet getCustomerCheckinByInvoice(string invoiceNo)
+         {
+             var dataset = new DataSet();
+             var sqlParams = new List<SqlParameter>();
+             var outPutParameter = new Dictionary<string, string>();
+
+             sqlParams.Add(new SqlParameter()
+             {
+                 ParameterName = "@Invoice_No",
+                 SqlDbType = SqlDbType.VarChar,
+                 Direction = ParameterDirection.Input,
+                 Value = invoiceNo
+
+             });
+             sqlParams.Add(new SqlParameter()
+             {
+                 ParameterName = "@Error",
+                 SqlDbType = SqlDbType.VarChar,
+                 Direction = ParameterDirection.Output,
+                 Size = 5000
+
+             });
+
+             dataset = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_GETCUSTOMERDETAILBYINVOICE", sqlParams, out outPutParameter);
+
+             if (outPutParameter.Keys.Count > 0 && outPutParameter.ContainsKey("@Error"))
+             {
+                 if (outPutParameter["@Error"] == "NoError")
+                 {
+                 }
+                 else
+                 {
+                     _message = outPutParameter["@Error"];
+                 }
+             }
+             return dataset;
+         }
+
         #endregion
     }
 

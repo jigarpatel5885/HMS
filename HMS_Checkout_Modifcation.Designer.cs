@@ -28,16 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnExit = new System.Windows.Forms.Button();
             this.BtnCheckOut = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtServiceTime = new System.Windows.Forms.DateTimePicker();
+            this.datagridview1 = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtServiceAmount = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtRemark = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbServices = new System.Windows.Forms.ComboBox();
+            this.txtTotalServiceAmt = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.cmbPaymentMode = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.dtpServiceDate = new System.Windows.Forms.DateTimePicker();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtCheckOutTime = new System.Windows.Forms.DateTimePicker();
-            this.datagridview1 = new System.Windows.Forms.DataGridView();
             this.txtSgstPer = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtCgstPer = new System.Windows.Forms.TextBox();
@@ -62,6 +76,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtRegNo = new System.Windows.Forms.TextBox();
             this.txtInvoiceNo = new System.Windows.Forms.TextBox();
+            this.btnGet = new System.Windows.Forms.Button();
+            this.chkItems = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -100,7 +116,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(945, 160);
+            this.label7.Location = new System.Drawing.Point(955, 184);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 16);
             this.label7.TabIndex = 124;
@@ -108,12 +124,26 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtServiceTime);
+            this.groupBox2.Controls.Add(this.datagridview1);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.txtServiceAmount);
+            this.groupBox2.Controls.Add(this.btnDelete);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.btnAdd);
+            this.groupBox2.Controls.Add(this.txtRemark);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.cmbServices);
+            this.groupBox2.Controls.Add(this.txtTotalServiceAmt);
+            this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.cmbPaymentMode);
+            this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.dtpServiceDate);
             this.groupBox2.Controls.Add(this.txtTotal);
             this.groupBox2.Controls.Add(this.txtCheckOutTime);
-            this.groupBox2.Controls.Add(this.datagridview1);
             this.groupBox2.Controls.Add(this.txtSgstPer);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.txtCgstPer);
@@ -123,11 +153,157 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.dtpDpDate);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(15, 284);
+            this.groupBox2.Location = new System.Drawing.Point(15, 254);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1227, 330);
+            this.groupBox2.Size = new System.Drawing.Size(1227, 360);
             this.groupBox2.TabIndex = 126;
             this.groupBox2.TabStop = false;
+            // 
+            // txtServiceTime
+            // 
+            this.txtServiceTime.CustomFormat = "hh:mm:ss";
+            this.txtServiceTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtServiceTime.Location = new System.Drawing.Point(184, 45);
+            this.txtServiceTime.Name = "txtServiceTime";
+            this.txtServiceTime.ShowUpDown = true;
+            this.txtServiceTime.Size = new System.Drawing.Size(80, 20);
+            this.txtServiceTime.TabIndex = 99;
+            this.txtServiceTime.Value = new System.DateTime(2017, 12, 20, 22, 40, 0, 0);
+            // 
+            // datagridview1
+            // 
+            this.datagridview1.AllowUserToAddRows = false;
+            this.datagridview1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.datagridview1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridview1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chkItems});
+            this.datagridview1.Location = new System.Drawing.Point(35, 117);
+            this.datagridview1.Name = "datagridview1";
+            this.datagridview1.Size = new System.Drawing.Size(866, 215);
+            this.datagridview1.TabIndex = 134;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(758, 16);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 16);
+            this.label13.TabIndex = 97;
+            this.label13.Text = "Amount";
+            // 
+            // txtServiceAmount
+            // 
+            this.txtServiceAmount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtServiceAmount.Location = new System.Drawing.Point(742, 43);
+            this.txtServiceAmount.Name = "txtServiceAmount";
+            this.txtServiceAmount.Size = new System.Drawing.Size(93, 22);
+            this.txtServiceAmount.TabIndex = 9;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Aqua;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(58, 75);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(139, 29);
+            this.btnDelete.TabIndex = 132;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(589, 16);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(60, 16);
+            this.label16.TabIndex = 95;
+            this.label16.Text = "Remarks";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Aqua;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(203, 75);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(139, 29);
+            this.btnAdd.TabIndex = 131;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemark.Location = new System.Drawing.Point(541, 44);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(171, 22);
+            this.txtRemark.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(952, 78);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 16);
+            this.label9.TabIndex = 128;
+            this.label9.Text = "Total";
+            // 
+            // cmbServices
+            // 
+            this.cmbServices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.cmbServices.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbServices.FormattingEnabled = true;
+            this.cmbServices.Location = new System.Drawing.Point(316, 42);
+            this.cmbServices.Name = "cmbServices";
+            this.cmbServices.Size = new System.Drawing.Size(199, 24);
+            this.cmbServices.TabIndex = 7;
+            this.cmbServices.SelectedIndexChanged += new System.EventHandler(this.cmbServices_SelectedIndexChanged);
+            // 
+            // txtTotalServiceAmt
+            // 
+            this.txtTotalServiceAmt.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalServiceAmt.Location = new System.Drawing.Point(1071, 75);
+            this.txtTotalServiceAmt.Name = "txtTotalServiceAmt";
+            this.txtTotalServiceAmt.ReadOnly = true;
+            this.txtTotalServiceAmt.Size = new System.Drawing.Size(133, 22);
+            this.txtTotalServiceAmt.TabIndex = 127;
+            this.txtTotalServiceAmt.TabStop = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(378, 16);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(57, 16);
+            this.label17.TabIndex = 93;
+            this.label17.Text = "Services";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(194, 16);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(82, 16);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Service Time";
             // 
             // cmbPaymentMode
             // 
@@ -137,25 +313,44 @@
             this.cmbPaymentMode.Items.AddRange(new object[] {
             "Cash",
             "Card"});
-            this.cmbPaymentMode.Location = new System.Drawing.Point(1061, 157);
+            this.cmbPaymentMode.Location = new System.Drawing.Point(1071, 181);
             this.cmbPaymentMode.Name = "cmbPaymentMode";
             this.cmbPaymentMode.Size = new System.Drawing.Size(133, 24);
             this.cmbPaymentMode.TabIndex = 123;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(76, 16);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(81, 16);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Service Date";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(945, 190);
+            this.label6.Location = new System.Drawing.Point(955, 214);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 16);
             this.label6.TabIndex = 121;
             this.label6.Text = "Total Amount";
             // 
+            // dtpServiceDate
+            // 
+            this.dtpServiceDate.CustomFormat = "dd-MM-yyyy ";
+            this.dtpServiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpServiceDate.Location = new System.Drawing.Point(69, 44);
+            this.dtpServiceDate.Name = "dtpServiceDate";
+            this.dtpServiceDate.Size = new System.Drawing.Size(94, 20);
+            this.dtpServiceDate.TabIndex = 5;
+            // 
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(1061, 187);
+            this.txtTotal.Location = new System.Drawing.Point(1071, 211);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(133, 22);
@@ -166,50 +361,28 @@
             // 
             this.txtCheckOutTime.CustomFormat = "hh:mm:ss";
             this.txtCheckOutTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtCheckOutTime.Location = new System.Drawing.Point(393, 30);
+            this.txtCheckOutTime.Location = new System.Drawing.Point(707, 84);
             this.txtCheckOutTime.Name = "txtCheckOutTime";
             this.txtCheckOutTime.ShowUpDown = true;
             this.txtCheckOutTime.Size = new System.Drawing.Size(80, 20);
             this.txtCheckOutTime.TabIndex = 119;
             this.txtCheckOutTime.Value = new System.DateTime(2017, 12, 20, 22, 40, 0, 0);
             // 
-            // datagridview1
-            // 
-            this.datagridview1.AllowUserToAddRows = false;
-            this.datagridview1.AllowUserToDeleteRows = false;
-            this.datagridview1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.datagridview1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.datagridview1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridview1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.datagridview1.Location = new System.Drawing.Point(13, 62);
-            this.datagridview1.Name = "datagridview1";
-            this.datagridview1.ReadOnly = true;
-            this.datagridview1.Size = new System.Drawing.Size(868, 246);
-            this.datagridview1.TabIndex = 118;
-            this.datagridview1.TabStop = false;
-            // 
             // txtSgstPer
             // 
             this.txtSgstPer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSgstPer.Location = new System.Drawing.Point(1061, 129);
+            this.txtSgstPer.Location = new System.Drawing.Point(1071, 153);
             this.txtSgstPer.Name = "txtSgstPer";
             this.txtSgstPer.Size = new System.Drawing.Size(133, 22);
             this.txtSgstPer.TabIndex = 104;
             this.txtSgstPer.TabStop = false;
+            this.txtSgstPer.TextChanged += new System.EventHandler(this.txtSgstPer_TextChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(942, 135);
+            this.label15.Location = new System.Drawing.Point(952, 159);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(59, 16);
             this.label15.TabIndex = 103;
@@ -218,17 +391,18 @@
             // txtCgstPer
             // 
             this.txtCgstPer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCgstPer.Location = new System.Drawing.Point(1061, 104);
+            this.txtCgstPer.Location = new System.Drawing.Point(1071, 128);
             this.txtCgstPer.Name = "txtCgstPer";
             this.txtCgstPer.Size = new System.Drawing.Size(133, 22);
             this.txtCgstPer.TabIndex = 102;
             this.txtCgstPer.TabStop = false;
+            this.txtCgstPer.TextChanged += new System.EventHandler(this.txtCgstPer_TextChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(942, 107);
+            this.label14.Location = new System.Drawing.Point(952, 131);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(83, 16);
             this.label14.TabIndex = 101;
@@ -237,17 +411,18 @@
             // txtDiscountPer
             // 
             this.txtDiscountPer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscountPer.Location = new System.Drawing.Point(1061, 79);
+            this.txtDiscountPer.Location = new System.Drawing.Point(1071, 103);
             this.txtDiscountPer.Name = "txtDiscountPer";
             this.txtDiscountPer.Size = new System.Drawing.Size(133, 22);
             this.txtDiscountPer.TabIndex = 98;
             this.txtDiscountPer.TabStop = false;
+            this.txtDiscountPer.TextChanged += new System.EventHandler(this.txtDiscountPer_TextChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(942, 82);
+            this.label12.Location = new System.Drawing.Point(952, 106);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 16);
             this.label12.TabIndex = 97;
@@ -257,7 +432,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(316, 30);
+            this.label11.Location = new System.Drawing.Point(630, 84);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 16);
             this.label11.TabIndex = 95;
@@ -267,7 +442,7 @@
             // 
             this.dtpDpDate.CustomFormat = "dd-MM-yyyy ";
             this.dtpDpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDpDate.Location = new System.Drawing.Point(116, 27);
+            this.dtpDpDate.Location = new System.Drawing.Point(430, 81);
             this.dtpDpDate.Name = "dtpDpDate";
             this.dtpDpDate.Size = new System.Drawing.Size(184, 20);
             this.dtpDpDate.TabIndex = 69;
@@ -275,7 +450,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(39, 30);
+            this.label10.Location = new System.Drawing.Point(353, 84);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 13);
             this.label10.TabIndex = 68;
@@ -433,11 +608,32 @@
             this.txtInvoiceNo.Size = new System.Drawing.Size(184, 22);
             this.txtInvoiceNo.TabIndex = 129;
             // 
+            // btnGet
+            // 
+            this.btnGet.BackColor = System.Drawing.Color.Aqua;
+            this.btnGet.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnGet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGet.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGet.Location = new System.Drawing.Point(334, 58);
+            this.btnGet.Name = "btnGet";
+            this.btnGet.Size = new System.Drawing.Size(39, 29);
+            this.btnGet.TabIndex = 130;
+            this.btnGet.Text = "...";
+            this.btnGet.UseVisualStyleBackColor = false;
+            this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
+            // 
+            // chkItems
+            // 
+            this.chkItems.HeaderText = "";
+            this.chkItems.Name = "chkItems";
+            // 
             // HMS_Checkout_Modifcation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(1271, 706);
+            this.Controls.Add(this.btnGet);
             this.Controls.Add(this.txtInvoiceNo);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.BtnCheckOut);
@@ -445,8 +641,11 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HMS_Checkout_Modifcation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HMS_Checkout_Modifcation";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HMS_Checkout_Modifcation_FormClosing);
             this.Load += new System.EventHandler(this.HMS_Checkout_Modifcation_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -470,7 +669,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.DateTimePicker txtCheckOutTime;
-        private System.Windows.Forms.DataGridView datagridview1;
         private System.Windows.Forms.TextBox txtSgstPer;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtCgstPer;
@@ -495,5 +693,22 @@
         private System.Windows.Forms.TextBox txtInvoiceNo;
         private System.Windows.Forms.TextBox txtRoomNo;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnGet;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtTotalServiceAmt;
+        private System.Windows.Forms.DateTimePicker txtServiceTime;
+        private System.Windows.Forms.DataGridView datagridview1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtServiceAmount;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtRemark;
+        private System.Windows.Forms.ComboBox cmbServices;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DateTimePicker dtpServiceDate;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn chkItems;
     }
 }
