@@ -384,11 +384,11 @@ namespace HMS
                 {
                     MessageBox.Show("Operation sucessfully completed....!!!!", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    if (MessageBox.Show("Print Bill ??", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
+                    //if (MessageBox.Show("Print Bill ??", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    //{
                         printBill(userId, reservationId, roomNo);
                         resetData();
-                    }
+                    //}
                     
                 }
               //  resetData();

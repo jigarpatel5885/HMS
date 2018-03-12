@@ -17,7 +17,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Hms_ReprintInvoice());
+            Application.Run(new Frm_Hms_CheckIn());
         }   
     }
 }

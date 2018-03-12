@@ -1707,6 +1707,111 @@ namespace HMS.Custom_Classes.Service_Classes
               return dataset;
           }
         #endregion
+
+        #region Room Shifting 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="roomNo"></param>
+        /// <param name="OldroomNo"></param>
+        /// <param name="shiftDate"></param>
+        /// <param name="ShiftTime"></param>
+        /// <param name="reservationId"></param>
+        /// <param name="roomRent"></param>
+        /// <returns></returns>
+         public string setRoomShifting(string userId,
+                                      int roomNo,
+                                      int OldroomNo,
+                                      string shiftDate,
+                                      string ShiftTime,
+                                      string reservationId,                                      
+                                      decimal roomRent
+             
+                              )
+          {
+              var sqlParams = new List<SqlParameter>();
+              var outPutParameter = new Dictionary<string, string>();
+
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@User_Id",
+                  SqlDbType = SqlDbType.VarChar,
+                  Direction = ParameterDirection.Input,
+                  Value = userId
+              });
+
+             
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Reservation_Id",
+                  SqlDbType = SqlDbType.VarChar,
+                  Direction = ParameterDirection.Input,
+                  Value = reservationId
+              });
+              
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Shifting_Date",
+                  SqlDbType = SqlDbType.VarChar,
+                  Direction = ParameterDirection.Input,
+                  Value = shiftDate
+              });
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Shifting_Time",
+                  SqlDbType = SqlDbType.VarChar,
+                  Direction = ParameterDirection.Input,
+                  Value = ShiftTime
+              });
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Room_Rent",
+                  SqlDbType = SqlDbType.Decimal,
+                  Direction = ParameterDirection.Input,
+                  Value = roomRent
+              });
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@New_Room_No",
+                  SqlDbType = SqlDbType.Decimal,
+                  Direction = ParameterDirection.Input,
+                  Value = roomNo
+              });
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Room_No",
+                  SqlDbType = SqlDbType.Decimal,
+                  Direction = ParameterDirection.Input,
+                  Value = OldroomNo
+              });
+
+              
+            
+
+
+
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Error",
+                  SqlDbType = SqlDbType.VarChar,
+                  Direction = ParameterDirection.Output,
+                  Size = 5000
+
+              });
+              var dataTable = new DataSet();
+
+
+              dataTable = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_SETROOMSHIFTING", sqlParams, out outPutParameter);
+             
+              if (outPutParameter.Keys.Count > 0 && outPutParameter.ContainsKey("@Error"))
+              {
+                  _message = outPutParameter["@Error"];
+              }
+
+              return _message;
+          }
+        #endregion
     }
 
 

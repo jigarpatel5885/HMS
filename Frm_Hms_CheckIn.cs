@@ -34,7 +34,7 @@ namespace HMS
 
         private void Frm_Hms_CheckIn_Load(object sender, EventArgs e)
         {
-            //clearData();
+            clearData();
             rbtRegClientY.Checked = true;
             dtpTime.Text = DateTime.Now.ToString("hh:mm:ss");
             fillCountries();
@@ -345,7 +345,7 @@ namespace HMS
 
         private void clearData()
         {
-            fillRooms();
+           
             txtStayDays.Text = "0";
             rbtRegClientY.Checked = true;
             txtFirstName.Text = "";
@@ -470,6 +470,7 @@ namespace HMS
             txtAddress1.Text = "";
             txtAddress2.Text = "";
             txtAddress3.Text = "";
+            txtMobileNo.Text = "";
 
         }
 
@@ -604,6 +605,7 @@ namespace HMS
                     referanceName = txtReferance.Text;
                     gstnNo = txtGstn.Text;
 
+
                    _message = _commonServices.setChekinData(userId,
                        firstName,
                        middleName,
@@ -639,7 +641,7 @@ namespace HMS
                        expectedCheckOut,
                        gstnNo,
                        Convert.ToInt32(string.IsNullOrEmpty(corporateClientId) ? "0" : corporateClientId),
-                        Convert.ToInt32(string.IsNullOrEmpty(roomRent) ? "0" : roomRent)                       
+                        Convert.ToDecimal(string.IsNullOrEmpty(roomRent) ? "0" : roomRent)                       
                        );
 
                    if (!_message.Equals("No Error"))
