@@ -1586,14 +1586,7 @@ namespace HMS.Custom_Classes.Service_Classes
                   Direction = ParameterDirection.Input,
                   Value = totalAmount
               });
-              sqlParams.Add(new SqlParameter()
-              {
-                  ParameterName = "@Total_Service_Amount",
-                  SqlDbType = SqlDbType.Decimal,
-                  Direction = ParameterDirection.Input,
-                  Value = totServiceAmt
-              });
-
+            
               sqlParams.Add(new SqlParameter()
               {
                   ParameterName = "@Trn_Mode",
@@ -1620,6 +1613,7 @@ namespace HMS.Custom_Classes.Service_Classes
                   Size = 5000
 
               });
+             
               var dataTable = new DataSet();
               if (param1)
               {
@@ -1627,6 +1621,14 @@ namespace HMS.Custom_Classes.Service_Classes
               }
               else
               {
+                  sqlParams.Add(new SqlParameter()
+                  {
+                      ParameterName = "@Total_Service_Amount",
+                      SqlDbType = SqlDbType.Decimal,
+                      Direction = ParameterDirection.Input,
+                      Value = totServiceAmt
+                  });
+
                    dataTable = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_SETCHECKOUT", sqlParams, out outPutParameter);
               }
               if (outPutParameter.Keys.Count > 0 && outPutParameter.ContainsKey("@Error"))
