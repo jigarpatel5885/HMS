@@ -651,8 +651,10 @@ namespace HMS
                    else
                    {
                        MessageBox.Show("Sucess");
+                       clearData();
+                       fillRooms();
                    }
-                   clearData();
+                  
                     
                 }
                 else
@@ -825,6 +827,11 @@ namespace HMS
             {
                 panel1.Enabled = true;
             }
+        }
+
+        private void txtMobileNo_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
       

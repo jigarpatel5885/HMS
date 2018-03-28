@@ -31,7 +31,8 @@ namespace HMS
         {
             string userId = string.Empty,paymentMode = string.Empty,checkoutDt = string.Empty,checkoutTime = string.Empty,trnMode=string.Empty;
             string reservationId = string.Empty;
-            int discount = 0,cgst=0,sgst=0,roomNo=0;
+            decimal discount = 0, cgst = 0, sgst = 0;
+            int roomNo = 0;
             decimal totalAmount = 0;
             decimal totalServiceAmt = 0;
              userId = _clsGlobalConstants.glvUserId;
@@ -44,9 +45,9 @@ namespace HMS
                 checkoutDt = dtpDpDate.Text;
                 checkoutTime = txtCheckOutTime.Text;
                 trnMode = "UPDATE";
-                discount = Convert.ToInt32(string.IsNullOrEmpty(txtDiscountPer.Text) ? "0" : txtDiscountPer.Text);
-                cgst = Convert.ToInt32(string.IsNullOrEmpty(txtCgstPer.Text) ? "0" : txtCgstPer.Text);
-                sgst = Convert.ToInt32(string.IsNullOrEmpty(txtSgstPer.Text) ? "0" : txtSgstPer.Text);
+                discount = Convert.ToDecimal(string.IsNullOrEmpty(txtDiscountPer.Text) ? "0" : txtDiscountPer.Text);
+                cgst = Convert.ToDecimal(string.IsNullOrEmpty(txtCgstPer.Text) ? "0" : txtCgstPer.Text);
+                sgst = Convert.ToDecimal(string.IsNullOrEmpty(txtSgstPer.Text) ? "0" : txtSgstPer.Text);
                 totalServiceAmt = Convert.ToDecimal(string.IsNullOrEmpty(txtTotalServiceAmt.Text) ? "0" : txtTotalServiceAmt.Text);
                 totalAmount = Convert.ToDecimal(string.IsNullOrEmpty(txtTotal.Text) ? "0" : txtTotal.Text);
                
@@ -184,51 +185,88 @@ namespace HMS
 
         private void setTotalAmount()
         {
-            double total = 0, discountTot = 0, cgstTot = 0, sgstTot = 0;
-            var discount = txtDiscountPer.Text;
-            var CGST = txtCgstPer.Text;
-            var SGST = txtSgstPer.Text;
-            if (discount.ToString() == "")
+
+            double cgstPer = 0, sgstPer = 0, discountPer = 0,CGST=0,SGST=0,Discount=0;
+             
+            double totalAmount = 0,grossTotal=0;
+            if (!string.IsNullOrEmpty(txtDiscountPer.Text))
             {
-                discount = "0";
+               Discount= Convert.ToDouble(txtDiscountPer.Text);
             }
-            if (CGST.ToString() == "")
+            if (!string.IsNullOrEmpty(txtCgstPer.Text))
             {
-                CGST = "0";
+                CGST = Convert.ToDouble(txtCgstPer.Text);
             }
-            if (SGST.ToString() == "")
+            if (!string.IsNullOrEmpty(txtSgstPer.Text))
             {
-                SGST = "0";
+                SGST = Convert.ToDouble(txtSgstPer.Text); ;
             }
 
-            foreach (DataGridViewRow dr in datagridview1.Rows)
-            {
-                total += Convert.ToDouble(dr.Cells["Price"].Value.ToString());
+           
+                discountPer = ((Convert.ToDouble(txtTotalServiceAmt.Text) * Discount) / 100);
+                totalAmount = Math.Round(Convert.ToDouble(txtTotalServiceAmt.Text) - discountPer);
+           
+           
+                cgstPer = ((totalAmount * CGST) / 100);
+               // totalAmount +=  cgstPer;
 
-            }
-            txtTotal.Text = total.ToString();
-            if (discount.ToString() != "0")
-            {
-                discountTot = (Convert.ToDouble(txtTotalServiceAmt.Text)) * (Convert.ToDouble(discount.ToString()));
+           
+                sgstPer = ((totalAmount * SGST) / 100);
+               // totalAmount +=  sgstPer;
+                grossTotal = totalAmount + cgstPer + sgstPer;
+                txtTotal.Text = Math.Round(grossTotal).ToString(); 
+      
 
-                discountTot = discountTot / 100;
-                txtTotal.Text = System.Math.Round(((Convert.ToDouble(txtTotalServiceAmt.Text) - discountTot) + cgstTot + sgstTot)).ToString();
 
-            }
+            
+            //double total = 0, discountTot = 0, cgstTot = 0, sgstTot = 0;
+            //var discount = txtDiscountPer.Text;
+            //var CGST = txtCgstPer.Text;
+            //var SGST = txtSgstPer.Text;
+            //double totDiscountAmount = 0;
 
-            if (CGST.ToString() != "0")
-            {
+            //if (discount.ToString() == "")
+            //{
+            //    discount = "0";
+            //}
+            
+            //if (CGST.ToString() == "")
+            //{
+            //    CGST = "0";
+            //}
+            //if (SGST.ToString() == "")
+            //{
+            //    SGST = "0";
+            //}
 
-                cgstTot = (Convert.ToDouble(txtTotalServiceAmt.Text)) * (Convert.ToDouble(CGST.ToString().ToString()));
-                cgstTot = cgstTot / 100;
-                txtTotal.Text = System.Math.Round(((Convert.ToDouble(txtTotalServiceAmt.Text) - discountTot) + cgstTot + sgstTot)).ToString();
-            }
-            if (SGST.ToString() != "0")
-            {
-                sgstTot = (Convert.ToDouble(txtTotalServiceAmt.Text)) * (Convert.ToDouble(SGST.ToString()));
-                sgstTot = sgstTot / 100;
-                txtTotal.Text = System.Math.Round(((Convert.ToDouble(txtTotalServiceAmt.Text) - discountTot) + cgstTot + sgstTot)).ToString();
-            }
+            //foreach (DataGridViewRow dr in datagridview1.Rows)
+            //{
+            //    total += Convert.ToDouble(dr.Cells["Price"].Value.ToString());
+
+            //}
+            //txtTotal.Text = total.ToString();
+            //if (discount.ToString() != string.Empty)
+            //{
+            //    discountTot = (Convert.ToDouble(txtTotalServiceAmt.Text)) * (Convert.ToDouble(discount.ToString()));
+
+            //    discountTot = discountTot / 100;
+            //    txtTotal.Text = System.Math.Round(((Convert.ToDouble(txtTotalServiceAmt.Text) - discountTot))).ToString();
+            //    totDiscountAmount = System.Math.Round(((Convert.ToDouble(txtTotalServiceAmt.Text) - discountTot)));
+            //}
+
+            //if (CGST.ToString() != string.Empty)
+            //{
+
+            //    cgstTot = (Convert.ToDouble(totDiscountAmount)) * (Convert.ToDouble(CGST.ToString().ToString()));
+            //    cgstTot = cgstTot / 100;
+            //    txtTotal.Text = System.Math.Round((totDiscountAmount + cgstTot )).ToString();
+            //}
+            //if (SGST.ToString() != string.Empty)
+            //{
+            //    sgstTot = (Convert.ToDouble(totDiscountAmount)) * (Convert.ToDouble(SGST.ToString()));
+            //    sgstTot = sgstTot / 100;
+            //    txtTotal.Text = System.Math.Round((totDiscountAmount + sgstTot)).ToString();
+            //}
 
         }
         private void fillServiceNames()
@@ -252,7 +290,7 @@ namespace HMS
             if (ds.Tables.Count > 0)
             {
                 datagridview1.DataSource = ds.Tables[0];
-                setTotalAmount();
+                //setTotalAmount();
             }
             else
             {
@@ -295,6 +333,13 @@ namespace HMS
                             txtArTime.Text = row["AR_Time"].ToString();
                             txtTotalPerson.Text = row["Total_Guest"].ToString();
                             txtRoomNo.Text = row["Room_No"].ToString();
+                            dtpDpDate.Text = row["CheckOut_Dt"].ToString();
+                            txtCheckOutTime.Text = row["CheckOut_Time"].ToString();
+                            txtDiscountPer.Text = row["Discount"].ToString();
+                            txtCgstPer.Text = row["CGST"].ToString();
+                            txtSgstPer.Text = row["SGST"].ToString();
+                            txtTotal.Text = row["Total_Amount"].ToString();
+                            cmbPaymentMode.Text = row["Payment_By"].ToString().Trim();
                         }
                     }                              
             }
@@ -352,6 +397,8 @@ namespace HMS
                  fillGuestData(txtInvoiceNo.Text.Trim());
                  fillServiceByRoomIdRid(txtRoomNo.Text.Trim(), txtRegNo.Text.Trim());
                  SetTotalServiceAmount();
+                
+                 
              }
              else
              {
@@ -509,17 +556,21 @@ namespace HMS
              this.Dispose();
          }
 
-         private void txtDiscountPer_TextChanged(object sender, EventArgs e)
+        
+                         
+         private void txtCgstPer_KeyUp(object sender, KeyEventArgs e)
+         {
+
+             setTotalAmount();   
+            
+         }
+
+         private void txtSgstPer_KeyUp(object sender, KeyEventArgs e)
          {
              setTotalAmount();
          }
 
-         private void txtCgstPer_TextChanged(object sender, EventArgs e)
-         {
-             setTotalAmount();
-         }
-
-         private void txtSgstPer_TextChanged(object sender, EventArgs e)
+         private void txtDiscountPer_KeyUp(object sender, KeyEventArgs e)
          {
              setTotalAmount();
          }

@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnExit = new System.Windows.Forms.Button();
             this.BtnCheckOut = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtServiceTime = new System.Windows.Forms.DateTimePicker();
             this.datagridview1 = new System.Windows.Forms.DataGridView();
+            this.chkItems = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label13 = new System.Windows.Forms.Label();
             this.txtServiceAmount = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -77,7 +78,6 @@
             this.txtRegNo = new System.Windows.Forms.TextBox();
             this.txtInvoiceNo = new System.Windows.Forms.TextBox();
             this.btnGet = new System.Windows.Forms.Button();
-            this.chkItems = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -174,14 +174,14 @@
             // 
             this.datagridview1.AllowUserToAddRows = false;
             this.datagridview1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.datagridview1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridview1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkItems});
@@ -189,6 +189,11 @@
             this.datagridview1.Name = "datagridview1";
             this.datagridview1.Size = new System.Drawing.Size(866, 215);
             this.datagridview1.TabIndex = 134;
+            // 
+            // chkItems
+            // 
+            this.chkItems.HeaderText = "";
+            this.chkItems.Name = "chkItems";
             // 
             // label13
             // 
@@ -376,7 +381,8 @@
             this.txtSgstPer.Size = new System.Drawing.Size(133, 22);
             this.txtSgstPer.TabIndex = 104;
             this.txtSgstPer.TabStop = false;
-            this.txtSgstPer.TextChanged += new System.EventHandler(this.txtSgstPer_TextChanged);
+          
+            this.txtSgstPer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSgstPer_KeyUp);
             // 
             // label15
             // 
@@ -396,7 +402,7 @@
             this.txtCgstPer.Size = new System.Drawing.Size(133, 22);
             this.txtCgstPer.TabIndex = 102;
             this.txtCgstPer.TabStop = false;
-            this.txtCgstPer.TextChanged += new System.EventHandler(this.txtCgstPer_TextChanged);
+            this.txtCgstPer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCgstPer_KeyUp);
             // 
             // label14
             // 
@@ -416,7 +422,8 @@
             this.txtDiscountPer.Size = new System.Drawing.Size(133, 22);
             this.txtDiscountPer.TabIndex = 98;
             this.txtDiscountPer.TabStop = false;
-            this.txtDiscountPer.TextChanged += new System.EventHandler(this.txtDiscountPer_TextChanged);
+           
+            this.txtDiscountPer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDiscountPer_KeyUp);
             // 
             // label12
             // 
@@ -621,11 +628,6 @@
             this.btnGet.Text = "...";
             this.btnGet.UseVisualStyleBackColor = false;
             this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
-            // 
-            // chkItems
-            // 
-            this.chkItems.HeaderText = "";
-            this.chkItems.Name = "chkItems";
             // 
             // HMS_Checkout_Modifcation
             // 

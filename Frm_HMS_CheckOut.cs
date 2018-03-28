@@ -121,55 +121,40 @@ namespace HMS
 
         private void setTotalAmount()
         {
-            double total = 0,discountTot=0,cgstTot=0,sgstTot=0;
-            var discount = txtDiscountPer.Text;
-            var CGST = txtCgstPer.Text;
-            var SGST = txtSgstPer.Text;
-            if (discount.ToString() == "")
-            {
-                discount = "0";
-            }
-            if (CGST.ToString() == "")
-            {
-                CGST = "0";
-            }
-            if (SGST.ToString() == "")
-            {
-                SGST = "0";
-            }
-            
-            foreach (DataGridViewRow dr in datagridview1.Rows)
-            {
-                total += Convert.ToDouble(dr.Cells["Price"].Value.ToString());
 
-            }
-            txtTotal.Text = total.ToString();
-            if (discount.ToString() != "0")
+            double cgstPer = 0, sgstPer = 0, discountPer = 0,CGST=0,SGST=0,Discount=0;
+             
+            double totalAmount = 0,grossTotal=0;
+            if (!string.IsNullOrEmpty(txtDiscountPer.Text))
             {
-                discountTot = (Convert.ToDouble(txtTotalServiceAmt.Text)) * (Convert.ToDouble(discount.ToString()));
-
-                discountTot = discountTot / 100;
-                 txtTotal.Text = System.Math.Round(((Convert.ToDouble(txtTotalServiceAmt.Text)-  discountTot) + cgstTot + sgstTot)).ToString();
-                 
+               Discount= Convert.ToDouble(txtDiscountPer.Text);
+            }
+            if (!string.IsNullOrEmpty(txtCgstPer.Text))
+            {
+                CGST = Convert.ToDouble(txtCgstPer.Text);
+            }
+            if (!string.IsNullOrEmpty(txtSgstPer.Text))
+            {
+                SGST = Convert.ToDouble(txtSgstPer.Text); ;
             }
 
-            if (CGST.ToString() != "0")
-            {
 
-                cgstTot = (Convert.ToDouble(txtTotalServiceAmt.Text)) * (Convert.ToDouble(CGST.ToString().ToString()));
-                cgstTot = cgstTot / 100;                
-                txtTotal.Text = System.Math.Round(((Convert.ToDouble(txtTotalServiceAmt.Text) - discountTot) + cgstTot + sgstTot)).ToString();
-            }
-            if (SGST.ToString() != "0")
-            {
-                sgstTot = (Convert.ToDouble(txtTotalServiceAmt.Text)) * (Convert.ToDouble(SGST.ToString()));
-                sgstTot = sgstTot / 100;             
-                txtTotal.Text = System.Math.Round(((Convert.ToDouble(txtTotalServiceAmt.Text) - discountTot) + cgstTot + sgstTot)).ToString();
-            }
-
-            
-            
+            discountPer = ((Convert.ToDouble(string.IsNullOrEmpty(txtTotalServiceAmt.Text) ? "0" : txtTotalServiceAmt.Text) * Discount) / 100);
+                totalAmount = Math.Round(Convert.ToDouble((Convert.ToDouble(string.IsNullOrEmpty(txtTotalServiceAmt.Text) ? "0" : txtTotalServiceAmt.Text) ) - discountPer));
            
+           
+                cgstPer = ((totalAmount * CGST) / 100);
+             
+
+           
+                sgstPer = ((totalAmount * SGST) / 100);
+             
+                grossTotal = totalAmount + cgstPer + sgstPer;
+                txtTotal.Text = Math.Round(grossTotal).ToString(); 
+      
+
+
+
         }
 
         private double GetGrandTotalAmount(Double total, string value, bool fgDiscount)
@@ -291,8 +276,11 @@ namespace HMS
         {
             fillServiceByRoomId(cmbRoomNo.Text);
             fillGuestData();
-           
+            SetTotalServiceAmount();
             setTotalAmount();
+            txtCgstPer.Text = "0";
+            txtSgstPer.Text = "0";
+            txtDiscountPer.Text = "0";
         }
 
         private void Frm_HMS_CheckOut_FormClosing(object sender, FormClosingEventArgs e)
@@ -304,9 +292,8 @@ namespace HMS
 
         private void txtDiscountPer_TextChanged(object sender, EventArgs e)
         {
-
-            setTotalAmount();
-            
+                       
+                setTotalAmount();                                
         }
 
         private void txtCgstPer_TextChanged(object sender, EventArgs e)
@@ -398,9 +385,21 @@ namespace HMS
 
         }
 
-        
+        private void txtDiscountPer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            _clsGeneralLibrary.isNumericValueAllowDecimals(sender, e);
+        }
 
-       
+        private void txtCgstPer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            _clsGeneralLibrary.isNumericValueAllowDecimals(sender, e);
+        }
+
+        private void txtSgstPer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            _clsGeneralLibrary.isNumericValueAllowDecimals(sender, e);
+        }
+               
 
     }
 }

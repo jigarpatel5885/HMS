@@ -88,6 +88,7 @@
             this.Controls.Add(this.txtInvoiceNo);
             this.Controls.Add(this.label1);
             this.Name = "Frm_Hms_ReprintInvoice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Hms_ReprintInvoice";
             this.ResumeLayout(false);
             this.PerformLayout();

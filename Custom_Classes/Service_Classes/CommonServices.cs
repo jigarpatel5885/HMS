@@ -1096,7 +1096,7 @@ namespace HMS.Custom_Classes.Service_Classes
                   Value = roomRent
 
               });
-              var dataTable = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_SETCHECKINDETAILS", sqlParams, out outPutParameter);
+              var dataTable = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_SETCHECKINDETAILS_NEW", sqlParams, out outPutParameter);
               if (outPutParameter.Keys.Count > 0 && outPutParameter.ContainsKey("@Error"))
               {
                   _message = outPutParameter["@Error"];
@@ -1509,9 +1509,9 @@ namespace HMS.Custom_Classes.Service_Classes
                                       string checkOutDt,
                                       string checkOutTime,
                                       string reservationId,
-                                      int discount,
-                                      int sgst,
-                                      int cgst,  
+                                      decimal discount,
+                                      decimal sgst,
+                                      decimal cgst,  
                                       decimal totalAmount,
                                       string trnMode,
                                       decimal totServiceAmt,  
@@ -1613,7 +1613,15 @@ namespace HMS.Custom_Classes.Service_Classes
                   Size = 5000
 
               });
-             
+
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Total_Service_Amount",
+                  SqlDbType = SqlDbType.Decimal,
+                  Direction = ParameterDirection.Input,
+                  Value = totServiceAmt
+              });
+
               var dataTable = new DataSet();
               if (param1)
               {
@@ -1621,15 +1629,8 @@ namespace HMS.Custom_Classes.Service_Classes
               }
               else
               {
-                  sqlParams.Add(new SqlParameter()
-                  {
-                      ParameterName = "@Total_Service_Amount",
-                      SqlDbType = SqlDbType.Decimal,
-                      Direction = ParameterDirection.Input,
-                      Value = totServiceAmt
-                  });
-
-                   dataTable = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_SETCHECKOUT", sqlParams, out outPutParameter);
+                 
+                  dataTable = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_SETCHECKOUT_NEW", sqlParams, out outPutParameter);
               }
               if (outPutParameter.Keys.Count > 0 && outPutParameter.ContainsKey("@Error"))
               {

@@ -150,6 +150,7 @@
             this.txtMobileNo.Name = "txtMobileNo";
             this.txtMobileNo.Size = new System.Drawing.Size(171, 22);
             this.txtMobileNo.TabIndex = 12;
+            this.txtMobileNo.TextChanged += new System.EventHandler(this.txtMobileNo_TextChanged);
             this.txtMobileNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMobileNo_KeyPress);
             // 
             // cmbGuest

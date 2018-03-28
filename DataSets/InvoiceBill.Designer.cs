@@ -719,7 +719,7 @@ namespace HMS.DataSets {
             
             private global::System.Data.DataColumn columnReservation_Id;
             
-            private global::System.Data.DataColumn columnAR_TIME;
+            private global::System.Data.DataColumn columnArr_Date;
             
             private global::System.Data.DataColumn columnTotal_Guest;
             
@@ -741,9 +741,17 @@ namespace HMS.DataSets {
             
             private global::System.Data.DataColumn columnCorporate_Client_Id;
             
-            private global::System.Data.DataColumn columnDEP_DATE;
+            private global::System.Data.DataColumn columnDep_Date;
             
             private global::System.Data.DataColumn columnPOSTAL_CODE;
+            
+            private global::System.Data.DataColumn columnArr_Time;
+            
+            private global::System.Data.DataColumn columnDep_Time;
+            
+            private global::System.Data.DataColumn columnCorporate_Name;
+            
+            private global::System.Data.DataColumn columnMultipleRooms;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -796,9 +804,9 @@ namespace HMS.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AR_TIMEColumn {
+            public global::System.Data.DataColumn Arr_DateColumn {
                 get {
-                    return this.columnAR_TIME;
+                    return this.columnArr_Date;
                 }
             }
             
@@ -884,9 +892,9 @@ namespace HMS.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DEP_DATEColumn {
+            public global::System.Data.DataColumn Dep_DateColumn {
                 get {
-                    return this.columnDEP_DATE;
+                    return this.columnDep_Date;
                 }
             }
             
@@ -895,6 +903,38 @@ namespace HMS.DataSets {
             public global::System.Data.DataColumn POSTAL_CODEColumn {
                 get {
                     return this.columnPOSTAL_CODE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Arr_TimeColumn {
+                get {
+                    return this.columnArr_Time;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Dep_TimeColumn {
+                get {
+                    return this.columnDep_Time;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Corporate_NameColumn {
+                get {
+                    return this.columnCorporate_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MultipleRoomsColumn {
+                get {
+                    return this.columnMultipleRooms;
                 }
             }
             
@@ -935,12 +975,31 @@ namespace HMS.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CUSTOMERDETAILSRow AddCUSTOMERDETAILSRow(string NAME, string Reservation_Id, string AR_TIME, int Total_Guest, int Room_No, string ADDRESS, int Adv_Booking_Amount, string Advance_Reciept, string Payment_Mode, string City, string Country, string Gstn, int Corporate_Client_Id, string DEP_DATE, string POSTAL_CODE) {
+            public CUSTOMERDETAILSRow AddCUSTOMERDETAILSRow(
+                        string NAME, 
+                        string Reservation_Id, 
+                        string Arr_Date, 
+                        int Total_Guest, 
+                        int Room_No, 
+                        string ADDRESS, 
+                        int Adv_Booking_Amount, 
+                        string Advance_Reciept, 
+                        string Payment_Mode, 
+                        string City, 
+                        string Country, 
+                        string Gstn, 
+                        int Corporate_Client_Id, 
+                        string Dep_Date, 
+                        string POSTAL_CODE, 
+                        string Arr_Time, 
+                        string Dep_Time, 
+                        string Corporate_Name, 
+                        string MultipleRooms) {
                 CUSTOMERDETAILSRow rowCUSTOMERDETAILSRow = ((CUSTOMERDETAILSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NAME,
                         Reservation_Id,
-                        AR_TIME,
+                        Arr_Date,
                         Total_Guest,
                         Room_No,
                         ADDRESS,
@@ -951,8 +1010,12 @@ namespace HMS.DataSets {
                         Country,
                         Gstn,
                         Corporate_Client_Id,
-                        DEP_DATE,
-                        POSTAL_CODE};
+                        Dep_Date,
+                        POSTAL_CODE,
+                        Arr_Time,
+                        Dep_Time,
+                        Corporate_Name,
+                        MultipleRooms};
                 rowCUSTOMERDETAILSRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCUSTOMERDETAILSRow);
                 return rowCUSTOMERDETAILSRow;
@@ -977,7 +1040,7 @@ namespace HMS.DataSets {
             internal void InitVars() {
                 this.columnNAME = base.Columns["NAME"];
                 this.columnReservation_Id = base.Columns["Reservation_Id"];
-                this.columnAR_TIME = base.Columns["AR_TIME"];
+                this.columnArr_Date = base.Columns["Arr_Date"];
                 this.columnTotal_Guest = base.Columns["Total_Guest"];
                 this.columnRoom_No = base.Columns["Room_No"];
                 this.columnADDRESS = base.Columns["ADDRESS"];
@@ -988,8 +1051,12 @@ namespace HMS.DataSets {
                 this.columnCountry = base.Columns["Country"];
                 this.columnGstn = base.Columns["Gstn"];
                 this.columnCorporate_Client_Id = base.Columns["Corporate_Client_Id"];
-                this.columnDEP_DATE = base.Columns["DEP_DATE"];
+                this.columnDep_Date = base.Columns["Dep_Date"];
                 this.columnPOSTAL_CODE = base.Columns["POSTAL_CODE"];
+                this.columnArr_Time = base.Columns["Arr_Time"];
+                this.columnDep_Time = base.Columns["Dep_Time"];
+                this.columnCorporate_Name = base.Columns["Corporate_Name"];
+                this.columnMultipleRooms = base.Columns["MultipleRooms"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -999,8 +1066,8 @@ namespace HMS.DataSets {
                 base.Columns.Add(this.columnNAME);
                 this.columnReservation_Id = new global::System.Data.DataColumn("Reservation_Id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnReservation_Id);
-                this.columnAR_TIME = new global::System.Data.DataColumn("AR_TIME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAR_TIME);
+                this.columnArr_Date = new global::System.Data.DataColumn("Arr_Date", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArr_Date);
                 this.columnTotal_Guest = new global::System.Data.DataColumn("Total_Guest", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal_Guest);
                 this.columnRoom_No = new global::System.Data.DataColumn("Room_No", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1021,10 +1088,18 @@ namespace HMS.DataSets {
                 base.Columns.Add(this.columnGstn);
                 this.columnCorporate_Client_Id = new global::System.Data.DataColumn("Corporate_Client_Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCorporate_Client_Id);
-                this.columnDEP_DATE = new global::System.Data.DataColumn("DEP_DATE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDEP_DATE);
+                this.columnDep_Date = new global::System.Data.DataColumn("Dep_Date", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDep_Date);
                 this.columnPOSTAL_CODE = new global::System.Data.DataColumn("POSTAL_CODE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPOSTAL_CODE);
+                this.columnArr_Time = new global::System.Data.DataColumn("Arr_Time", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArr_Time);
+                this.columnDep_Time = new global::System.Data.DataColumn("Dep_Time", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDep_Time);
+                this.columnCorporate_Name = new global::System.Data.DataColumn("Corporate_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCorporate_Name);
+                this.columnMultipleRooms = new global::System.Data.DataColumn("MultipleRooms", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMultipleRooms);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2092,17 +2167,17 @@ namespace HMS.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AR_TIME {
+            public string Arr_Date {
                 get {
                     try {
-                        return ((string)(this[this.tableCUSTOMERDETAILS.AR_TIMEColumn]));
+                        return ((string)(this[this.tableCUSTOMERDETAILS.Arr_DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AR_TIME\' in table \'CUSTOMERDETAILS\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Arr_Date\' in table \'CUSTOMERDETAILS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCUSTOMERDETAILS.AR_TIMEColumn] = value;
+                    this[this.tableCUSTOMERDETAILS.Arr_DateColumn] = value;
                 }
             }
             
@@ -2268,17 +2343,17 @@ namespace HMS.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DEP_DATE {
+            public string Dep_Date {
                 get {
                     try {
-                        return ((string)(this[this.tableCUSTOMERDETAILS.DEP_DATEColumn]));
+                        return ((string)(this[this.tableCUSTOMERDETAILS.Dep_DateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DEP_DATE\' in table \'CUSTOMERDETAILS\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dep_Date\' in table \'CUSTOMERDETAILS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCUSTOMERDETAILS.DEP_DATEColumn] = value;
+                    this[this.tableCUSTOMERDETAILS.Dep_DateColumn] = value;
                 }
             }
             
@@ -2295,6 +2370,70 @@ namespace HMS.DataSets {
                 }
                 set {
                     this[this.tableCUSTOMERDETAILS.POSTAL_CODEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Arr_Time {
+                get {
+                    try {
+                        return ((string)(this[this.tableCUSTOMERDETAILS.Arr_TimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Arr_Time\' in table \'CUSTOMERDETAILS\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERDETAILS.Arr_TimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Dep_Time {
+                get {
+                    try {
+                        return ((string)(this[this.tableCUSTOMERDETAILS.Dep_TimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Dep_Time\' in table \'CUSTOMERDETAILS\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERDETAILS.Dep_TimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Corporate_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableCUSTOMERDETAILS.Corporate_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Corporate_Name\' in table \'CUSTOMERDETAILS\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERDETAILS.Corporate_NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MultipleRooms {
+                get {
+                    try {
+                        return ((string)(this[this.tableCUSTOMERDETAILS.MultipleRoomsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MultipleRooms\' in table \'CUSTOMERDETAILS\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERDETAILS.MultipleRoomsColumn] = value;
                 }
             }
             
@@ -2324,14 +2463,14 @@ namespace HMS.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAR_TIMENull() {
-                return this.IsNull(this.tableCUSTOMERDETAILS.AR_TIMEColumn);
+            public bool IsArr_DateNull() {
+                return this.IsNull(this.tableCUSTOMERDETAILS.Arr_DateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAR_TIMENull() {
-                this[this.tableCUSTOMERDETAILS.AR_TIMEColumn] = global::System.Convert.DBNull;
+            public void SetArr_DateNull() {
+                this[this.tableCUSTOMERDETAILS.Arr_DateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2456,14 +2595,14 @@ namespace HMS.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDEP_DATENull() {
-                return this.IsNull(this.tableCUSTOMERDETAILS.DEP_DATEColumn);
+            public bool IsDep_DateNull() {
+                return this.IsNull(this.tableCUSTOMERDETAILS.Dep_DateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDEP_DATENull() {
-                this[this.tableCUSTOMERDETAILS.DEP_DATEColumn] = global::System.Convert.DBNull;
+            public void SetDep_DateNull() {
+                this[this.tableCUSTOMERDETAILS.Dep_DateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2476,6 +2615,54 @@ namespace HMS.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPOSTAL_CODENull() {
                 this[this.tableCUSTOMERDETAILS.POSTAL_CODEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsArr_TimeNull() {
+                return this.IsNull(this.tableCUSTOMERDETAILS.Arr_TimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetArr_TimeNull() {
+                this[this.tableCUSTOMERDETAILS.Arr_TimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDep_TimeNull() {
+                return this.IsNull(this.tableCUSTOMERDETAILS.Dep_TimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDep_TimeNull() {
+                this[this.tableCUSTOMERDETAILS.Dep_TimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCorporate_NameNull() {
+                return this.IsNull(this.tableCUSTOMERDETAILS.Corporate_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCorporate_NameNull() {
+                this[this.tableCUSTOMERDETAILS.Corporate_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMultipleRoomsNull() {
+                return this.IsNull(this.tableCUSTOMERDETAILS.MultipleRoomsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMultipleRoomsNull() {
+                this[this.tableCUSTOMERDETAILS.MultipleRoomsColumn] = global::System.Convert.DBNull;
             }
         }
         

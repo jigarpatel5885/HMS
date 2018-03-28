@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbRoomNo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -222,9 +222,9 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.dtpDpDate);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(34, 260);
+            this.groupBox2.Location = new System.Drawing.Point(34, 238);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1227, 330);
+            this.groupBox2.Size = new System.Drawing.Size(1227, 341);
             this.groupBox2.TabIndex = 94;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -309,14 +309,14 @@
             this.datagridview1.AllowUserToDeleteRows = false;
             this.datagridview1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.datagridview1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.datagridview1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridview1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.datagridview1.Location = new System.Drawing.Point(13, 62);
@@ -335,6 +335,7 @@
             this.txtSgstPer.TabIndex = 104;
             this.txtSgstPer.TabStop = false;
             this.txtSgstPer.TextChanged += new System.EventHandler(this.txtSgstPer_TextChanged);
+            this.txtSgstPer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSgstPer_KeyPress);
             // 
             // label15
             // 
@@ -355,6 +356,7 @@
             this.txtCgstPer.TabIndex = 102;
             this.txtCgstPer.TabStop = false;
             this.txtCgstPer.TextChanged += new System.EventHandler(this.txtCgstPer_TextChanged);
+            this.txtCgstPer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCgstPer_KeyPress);
             // 
             // label14
             // 
@@ -375,6 +377,7 @@
             this.txtDiscountPer.TabIndex = 98;
             this.txtDiscountPer.TabStop = false;
             this.txtDiscountPer.TextChanged += new System.EventHandler(this.txtDiscountPer_TextChanged);
+            this.txtDiscountPer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscountPer_KeyPress);
             // 
             // label12
             // 
