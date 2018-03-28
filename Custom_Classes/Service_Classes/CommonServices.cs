@@ -1625,7 +1625,7 @@ namespace HMS.Custom_Classes.Service_Classes
               var dataTable = new DataSet();
               if (param1)
               {
-                  dataTable = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_SETCHECKOUTRECHECKIN", sqlParams, out outPutParameter);
+                  dataTable = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_SETCHECKOUTRECHECKIN_NEW", sqlParams, out outPutParameter);
               }
               else
               {
