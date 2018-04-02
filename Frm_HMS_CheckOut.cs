@@ -51,6 +51,7 @@ namespace HMS
                 else
                 {
                     MessageBox.Show(_commonServices._message);
+                    cmbRoomNo.DataSource = "";
                 }
            
         }
@@ -69,6 +70,9 @@ namespace HMS
             {
                 datagridview1.DataSource = null;
             }
+            datagridview1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            datagridview1.EnableHeadersVisualStyles = false;
+            datagridview1.ClearSelection();
             
         }
 

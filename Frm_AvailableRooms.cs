@@ -51,10 +51,16 @@ namespace HMS
                     {
                         dt = ds.Tables[0];
                         foreach (DataRow row in dt.Rows)
-                        {
-                            if (!chkin.cmbRoomNo.Text.Trim().Equals(row["Key"].ToString()))
+                        {   if (chkin.chkModifyCheckIn.Checked)
                             {
-                                 chkList.Items.Add(row["Key"].ToString());
+                                chkList.Items.Add(row["Key"].ToString());
+                            }
+                           else 
+                            {
+                                if (!chkin.cmbRoomNo.Text.Trim().Equals(row["Key"].ToString()))
+                                {
+                                    chkList.Items.Add(row["Key"].ToString());
+                                }
                             }
                            
                         }

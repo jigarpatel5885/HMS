@@ -106,6 +106,9 @@
             this.dtpExpectedCheckOut = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.chkAdvPaymentMode = new System.Windows.Forms.CheckBox();
+            this.chkModifyCheckIn = new System.Windows.Forms.CheckBox();
+            this.lblModifyRoomNo = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -585,7 +588,7 @@
             this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(817, 580);
+            this.btnSave.Location = new System.Drawing.Point(687, 580);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(130, 29);
             this.btnSave.TabIndex = 41;
@@ -883,13 +886,49 @@
             // chkAdvPaymentMode
             // 
             this.chkAdvPaymentMode.AutoSize = true;
-            this.chkAdvPaymentMode.Location = new System.Drawing.Point(389, 550);
+            this.chkAdvPaymentMode.Location = new System.Drawing.Point(382, 550);
             this.chkAdvPaymentMode.Name = "chkAdvPaymentMode";
             this.chkAdvPaymentMode.Size = new System.Drawing.Size(119, 17);
             this.chkAdvPaymentMode.TabIndex = 98;
             this.chkAdvPaymentMode.Text = "Adv Payment Mode";
             this.chkAdvPaymentMode.UseVisualStyleBackColor = true;
             this.chkAdvPaymentMode.CheckedChanged += new System.EventHandler(this.chkAdvPaymentMode_CheckedChanged);
+            // 
+            // chkModifyCheckIn
+            // 
+            this.chkModifyCheckIn.AutoSize = true;
+            this.chkModifyCheckIn.Location = new System.Drawing.Point(705, 58);
+            this.chkModifyCheckIn.Name = "chkModifyCheckIn";
+            this.chkModifyCheckIn.Size = new System.Drawing.Size(102, 17);
+            this.chkModifyCheckIn.TabIndex = 99;
+            this.chkModifyCheckIn.Text = "Modify Check-in";
+            this.chkModifyCheckIn.UseVisualStyleBackColor = true;
+            this.chkModifyCheckIn.CheckedChanged += new System.EventHandler(this.chkModifyCheckIn_CheckedChanged);
+            // 
+            // lblModifyRoomNo
+            // 
+            this.lblModifyRoomNo.AutoSize = true;
+            this.lblModifyRoomNo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModifyRoomNo.ForeColor = System.Drawing.Color.Red;
+            this.lblModifyRoomNo.Location = new System.Drawing.Point(813, 54);
+            this.lblModifyRoomNo.Name = "lblModifyRoomNo";
+            this.lblModifyRoomNo.Size = new System.Drawing.Size(81, 19);
+            this.lblModifyRoomNo.TabIndex = 100;
+            this.lblModifyRoomNo.Text = "Room No";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Aqua;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(817, 580);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(130, 29);
+            this.btnCancel.TabIndex = 101;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // Frm_Hms_CheckIn
             // 
@@ -898,6 +937,8 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(1118, 631);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.lblModifyRoomNo);
             this.Controls.Add(this.chkAdvPaymentMode);
             this.Controls.Add(this.dtpExpectedCheckOut);
             this.Controls.Add(this.label16);
@@ -971,6 +1012,7 @@
             this.Controls.Add(this.lblPhoneNo);
             this.Controls.Add(this.cmbRoomNo);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.chkModifyCheckIn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -1070,5 +1112,8 @@
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.ComboBox cmbRoomNo;
         public System.Windows.Forms.CheckBox chkAdvPaymentMode;
+        public System.Windows.Forms.CheckBox chkModifyCheckIn;
+        private System.Windows.Forms.Label lblModifyRoomNo;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

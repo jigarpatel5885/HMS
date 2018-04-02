@@ -51,7 +51,7 @@ namespace HMS
            oldRoomNr = Convert.ToInt32( cmbRoomNo.SelectedValue.ToString());
             shiftingTime = dtpTime.Text;
             shiftingDate = dtpDate.Text;
-            roomCharges = Convert.ToDecimal(txtRoomCharges.Text);
+            roomCharges = Convert.ToDecimal(string.IsNullOrEmpty(txtRoomCharges.Text) ? "0" : txtRoomCharges.Text);
             reservationNo = txtRegNo.Text;
             userId = _clsGlobalConstants.glvUserId;
             _message = _commonServices.setRoomShifting(userId,
@@ -126,7 +126,7 @@ namespace HMS
             else
             {
                 var ds = new DataSet();
-                ds = _commonServices.getComboDetails(_clsGlobalConstants.glvUserId, "CHECK_IN_ROOMS");
+                ds = _commonServices.getComboDetails(_clsGlobalConstants.glvUserId, "CHECK_IN_ROOMS_SHIFTING");
                 if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
                     _clsGeneralLibrary.fillComboBox(ds.Tables[0], cmbRoomNo, "Key", "Key");
@@ -217,6 +217,11 @@ namespace HMS
         private void txtRoomCharges_KeyPress(object sender, KeyPressEventArgs e)
         {
             _clsGeneralLibrary.isNumericValueAllowDecimals(sender,e);
+        }
+
+        private void cmbRoomNo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

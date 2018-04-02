@@ -281,6 +281,9 @@ namespace HMS
             {
                 MessageBox.Show(_commonServices._message);
             }
+            datagridview1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            datagridview1.EnableHeadersVisualStyles = false;
+            datagridview1.ClearSelection();
         }
         private void fillServiceByRoomIdRid(string roomNo,string reservationId)
         {

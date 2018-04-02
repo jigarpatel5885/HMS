@@ -79,6 +79,7 @@ namespace HMS
             {
                 MessageBox.Show(_commonServices._message);
             }
+            
         }
 
         private Boolean validateCheckBoxInsideGrid()
@@ -188,6 +189,9 @@ namespace HMS
             {
                 dataGridView1.DataSource = null;
             }
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ClearSelection();
             setTotalAmount();
         }
         private string getPriceByRoomId(string serviceId)

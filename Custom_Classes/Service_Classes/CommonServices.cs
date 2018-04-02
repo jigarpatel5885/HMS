@@ -791,7 +791,8 @@ namespace HMS.Custom_Classes.Service_Classes
                                        string expectedCheckOutDate,
                                        string gstin,
                                        int corporateId,
-                                       decimal roomRent     
+                                       decimal roomRent,
+                                        string trnMode
               )
 
           {
@@ -1096,6 +1097,15 @@ namespace HMS.Custom_Classes.Service_Classes
                   Value = roomRent
 
               });
+
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Trn_Mode",
+                  SqlDbType = SqlDbType.VarChar,
+                  Direction = ParameterDirection.Input,
+                  Value = trnMode
+
+              });
               var dataTable = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_SETCHECKINDETAILS_NEW", sqlParams, out outPutParameter);
               if (outPutParameter.Keys.Count > 0 && outPutParameter.ContainsKey("@Error"))
               {
@@ -1275,6 +1285,46 @@ namespace HMS.Custom_Classes.Service_Classes
           #endregion
 
         #region Customer Service
+
+
+          public DataSet getCustomerCheckinDetailsForMod(string roomId)
+          {
+              var dataset = new DataSet();
+              var sqlParams = new List<SqlParameter>();
+              var outPutParameter = new Dictionary<string, string>();
+
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Room_Id",
+                  SqlDbType = SqlDbType.VarChar,
+                  Direction = ParameterDirection.Input,
+                  Value = roomId
+
+              });
+              sqlParams.Add(new SqlParameter()
+              {
+                  ParameterName = "@Error",
+                  SqlDbType = SqlDbType.VarChar,
+                  Direction = ParameterDirection.Output,
+                  Size = 5000
+
+              });
+
+              dataset = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_GETCHECKINDETAILSBYROOMID", sqlParams, out outPutParameter);
+
+              if (outPutParameter.Keys.Count > 0 && outPutParameter.ContainsKey("@Error"))
+              {
+                  if (outPutParameter["@Error"] == "NoError")
+                  {
+                  }
+                  else
+                  {
+                      _message = outPutParameter["@Error"];
+                  }
+              }
+              return dataset;
+          }
+
         /// <summary>
         /// 
         /// </summary>
@@ -1853,7 +1903,7 @@ namespace HMS.Custom_Classes.Service_Classes
               var dataTable = new DataSet();
 
 
-              dataTable = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_SETROOMSHIFTING", sqlParams, out outPutParameter);
+              dataTable = _clsDataAccess.ExecuteStoredProcedure("SP_HMS_SETROOMSHIFTING_NEW", sqlParams, out outPutParameter);
              
               if (outPutParameter.Keys.Count > 0 && outPutParameter.ContainsKey("@Error"))
               {

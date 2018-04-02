@@ -59,8 +59,10 @@ namespace HMS.Masters
                     dgvClientList.DataSource = ds.Tables[0];
                 }                
             }
-                                                        
-           
+
+            dgvClientList.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            dgvClientList.EnableHeadersVisualStyles = false;
+            dgvClientList.ClearSelection();
         }
         private void clearData()
         {

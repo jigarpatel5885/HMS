@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnExit = new System.Windows.Forms.Button();
             this.BtnCheckOut = new System.Windows.Forms.Button();
@@ -174,6 +175,9 @@
             // 
             this.datagridview1.AllowUserToAddRows = false;
             this.datagridview1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.datagridview1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.datagridview1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -194,6 +198,7 @@
             // 
             this.chkItems.HeaderText = "";
             this.chkItems.Name = "chkItems";
+            this.chkItems.Width = 5;
             // 
             // label13
             // 
@@ -381,7 +386,6 @@
             this.txtSgstPer.Size = new System.Drawing.Size(133, 22);
             this.txtSgstPer.TabIndex = 104;
             this.txtSgstPer.TabStop = false;
-          
             this.txtSgstPer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSgstPer_KeyUp);
             // 
             // label15
@@ -422,7 +426,6 @@
             this.txtDiscountPer.Size = new System.Drawing.Size(133, 22);
             this.txtDiscountPer.TabIndex = 98;
             this.txtDiscountPer.TabStop = false;
-           
             this.txtDiscountPer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDiscountPer_KeyUp);
             // 
             // label12

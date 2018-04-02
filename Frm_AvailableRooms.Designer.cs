@@ -96,7 +96,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 162);
             this.panel1.TabIndex = 4;
-           
             // 
             // Frm_AvailableRooms
             // 
@@ -124,8 +123,8 @@
 
         private System.Windows.Forms.CheckedListBox chkAvailableRooms;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Button btnClose;
     }
 }

@@ -84,7 +84,10 @@ namespace HMS.Masters
                     {
                         dgvRooms.DataSource = ds.Tables[0];
                     }
-                }       
+                }
+                dgvRooms.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+                dgvRooms.EnableHeadersVisualStyles = false;
+                dgvRooms.ClearSelection();
             }
             catch (Exception ex)
             {

@@ -66,6 +66,7 @@ namespace HMS.Masters
                     dgvRoomTypeList.Columns[2].HeaderText = "Price";
                     dgvRoomTypeList.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
                     dgvRoomTypeList.EnableHeadersVisualStyles = false;
+                    dgvRoomTypeList.ClearSelection();
                 }
                 else
                 {

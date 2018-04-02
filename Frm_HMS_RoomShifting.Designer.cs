@@ -304,6 +304,7 @@
             this.cmbRoomNo.Name = "cmbRoomNo";
             this.cmbRoomNo.Size = new System.Drawing.Size(171, 24);
             this.cmbRoomNo.TabIndex = 101;
+            this.cmbRoomNo.SelectedIndexChanged += new System.EventHandler(this.cmbRoomNo_SelectedIndexChanged);
             // 
             // label11
             // 
